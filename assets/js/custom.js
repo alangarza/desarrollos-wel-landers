@@ -388,3 +388,57 @@ function equalHeight(container){
         }
     });
 }
+
+
+
+$(document).ready(function() {
+    $("#form-wel").on('submit', function(e){
+        e.preventDefault();
+        var form = $(this);
+
+        form.parsley().validate();
+
+        if (form.parsley().isValid()){
+            // alert('valid');
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyxd3ovRuK6K1ebDfA0UM-V5N8yoogZ9_AXzrmVS6PoSZYTxJXf/exec'
+            const form = document.forms['submit-to-google-sheet']
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(setTimeout(function(){ 
+                window.location.href = "gracias.html"
+                 }, 500))
+            // form.addEventListener('submit', e => {
+            // e.preventDefault()
+        
+            //     .catch(error => console.error('Error!', error.message))
+            // })
+        }
+    });
+});
+
+
+
+$(document).ready(function() {
+    $("#contact-form").on('submit', function(e){
+        e.preventDefault();
+        var form = $(this);
+
+        form.parsley().validate();
+
+        if (form.parsley().isValid()){
+            // alert('valid');
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzYZxLn_sufTsu04yoEx69E-nJ1BcZ1G2MTqGkrresk-2LEBpRc/exec'
+            const form = document.forms['submit-to-google-sheet2']
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(setTimeout(function(){ 
+                window.location.href = "gracias.html"
+                 }, 500))
+            // form.addEventListener('submit', e => {
+            // e.preventDefault()
+        
+            //     .catch(error => console.error('Error!', error.message))
+            // })
+        }
+    });
+});

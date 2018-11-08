@@ -1,8 +1,6 @@
 /*------------------------------------------------------------------
-Project:	Propper HTML Template
 Version:	1.0
 Last change:	31.08.2016
-Assigned to:	ThemeStarz
 
 [Tle of contents]
 
@@ -2501,7 +2499,8 @@ hr {
 }
 
 .pricing-table {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
 }
 .pricing-table thead {
   border-bottom: 2px solid #000;
@@ -2528,7 +2527,7 @@ hr {
   padding: 10px 0;
 }
 .pricing-table tbody tr td:last-child {
-  text-align: right;
+  text-align: left;
 }
 
 .post-author {
@@ -2631,7 +2630,7 @@ hr {
   text-transform: uppercase;
 }
 .stage .description h2 {
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 3px;
 }
 .stage .description figure {
@@ -3636,11 +3635,59 @@ form .status i {
   text-indent: -15px;
 
 }
+.listado2{
+  font-size: 16px;
+
+}
 
 .cta{
   font-size: 16px!important;
 }
 
+.parsley-errors-list{
+  margin: 5px!important;
+
+}
+
+.header-lander{
+  font-weight: 600;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .main-header-text{
+    margin-top: 20px;
+  }
+}
+
+
 i.fas{
   margin-right: 5px;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+    background: #eee;
+  }
+
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}
+
+.venta{
+  margin: 0 auto!important;
+}
+
+.mobile-stage{
+  margin: 0 auto;
+}
+
+
