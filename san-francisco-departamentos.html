@@ -12,7 +12,7 @@
         <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"">
-    <meta name="author" content="Alpha Media Agency">
+    <meta name="author" content="">
     <!-- Open Graph -->
     <!-- <meta property=”og:type” content=”article” />
     <meta property=”og:title” content=”TITLE OF YOUR POST OR PAGE” />
@@ -34,6 +34,43 @@
     <script type="text/javascript" src="assets/js/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="assets/js/parsley.js"></script>
     <title>Plaza San Francisco - Departamentos en Preventa</title>
+    <script>
+        // ---------------
+        // Requires jQuery
+        // ---------------
+        
+        // ----------------------------------------------------------
+        // Utility function for getting Query String Parameter values
+        // ----------------------------------------------------------
+        getParameterByName = function(name) {
+            query = window.location.search.toString();
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            results = regex.exec(query);
+            if (results == null) return "";
+            else return decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        
+        $(document).ready(function() {
+            // -------------------------------------------------------------------------
+            // Set these Variables to the HTML names of the fields if they are different
+            // -------------------------------------------------------------------------
+            var $utmSource   = $('[name=utm_source]'),
+                $utmMedium  = $('[name=utm_medium]'),
+                $utmContent  = $('[name=utm_content]'),
+                $utmCampaign = $('[name=utm_campaign]');
+        
+            // --------------
+            // Set the Values
+            // --------------
+           $utmSource.val(getParameterByName('utm_source'));
+           $utmMedium.val(getParameterByName('utm_medium'));
+            $utmContent.val(getParameterByName('utm_content'));
+           $utmCampaign.val(getParameterByName('utm_campaign'));
+        });
+        </script>
+            
 
 
 
@@ -113,6 +150,10 @@
                                         </div>
                                         <input type="hidden" class="form-control" id="form-hero-phone" name="desarrollo"
                                             value="Departamentos - San Francisco">
+                                            <input type="hidden" name="utm_source" />
+                                            <input type="hidden" name="utm_medium" />
+                                            <input type="hidden" name="utm_content" />
+                                            <input type="hidden" name="utm_campaign" />
                                         <button type="submit" id="submit-form" class="btn btn-default  btn-rounded arrow">Enviar</button>
                                     </form>
                                 </div>
@@ -550,7 +591,7 @@
                         <h2>Galeria.</h2>
                     </div>
                     <!--end container-->
-                    <div class="owl-carousel big-gallery" data-owl-items="4" data-owl-auto-width="1" data-owl-nav="1"
+                    <div class="owl-carousel big-gallery" data-owl-items="5" data-owl-auto-width="1" data-owl-nav="1"
                         data-owl-dots="0" data-owl-center="1" data-owl-loop="1" data-owl-nav-container="#big-gallery-nav">
                         <div class="slide">
                             <div class="container">
@@ -590,6 +631,16 @@
                                     alt="San Francisco Salon de Eventos">
                                 <div class="description">
                                     <h3 class="framed">Sal&oacuten de Eventos</h3>
+                                </div>
+                            </div>
+                            <!--end container-->
+                        </div>
+                        <div class="slide">
+                            <div class="container">
+                                <img src="https://alphamedia.sfo2.cdn.digitaloceanspaces.com/wel/san-francisco/alberca.jpg"
+                                    alt="San Francisco Alberca">
+                                <div class="description">
+                                    <h3 class="framed">Alberca</h3>
                                 </div>
                             </div>
                             <!--end container-->
@@ -704,7 +755,7 @@
                             (function () {
                                 var options = {
                                     whatsapp: "+528126963994", // WhatsApp number
-                                    call_to_action: "Informacion via Whatsapp", // Call to action
+                                    call_to_action: "Información via Whatsapp", // Call to action
                                     position: "right",
                                      // Position may be 'right' or 'left'
                                 };
