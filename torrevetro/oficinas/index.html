@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
         crossorigin="anonymous">
+        <link rel="shortcut icon" href="https://alphamedia.sfo2.cdn.digitaloceanspaces.com/wel/lp/vetro/favicon.png" type="image/x-icon" >
 
+        <script type="text/javascript" src="assets/js/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/parsley.js"></script>
 
 
     <title>Torre Vetro - Oficinas</title>
@@ -67,27 +70,34 @@
                                 </div>
                                 <!--end col-md-7-->
                                 <div class="col-md-5 col-sm-5 animate">
-                                    <form class=" form-has-background-padding" id="form-wel">
+                                    <form class="form-has-background-padding" id="form-wel" name="submit-to-google-sheet"
+                                        data-parsley-validate>
                                         <h3>Llena el formulario para recibir más información.</h3>
                                         <div class="form-group">
                                             <label class="labeltag"><i class="fas fa-user"></i>Nombre de Contacto
                                             </label>
                                             <input type="text" class="form-control" id="form-hero-name" name="nombre"
-                                                placeholder="Nombre">
+                                                placeholder="Nombre" data-parsley-required="true">
                                         </div>
                                         <div class="form-group">
                                             <label class="labeltag"><i class="fas fa-envelope"></i>Correo
                                                 Electr&oacutenico </label>
                                             <input type="email" class="form-control" id="form-hero-email" name="correo"
-                                                placeholder="Correo Electronico">
+                                                placeholder="Correo Electrónico" data-parsley-required="true"
+                                                data-parsley-type="email">
                                         </div>
                                         <div class="form-group">
                                             <label class="labeltag"><i class="fas fa-phone"></i>Tel&eacutefono</label>
-                                            <input type="text" class="form-control" id="form-hero-phone" name="telefono"
-                                                placeholder="Telefono">
+                                            <input type="number" class="form-control" id="form-hero-phone" name="telefono"
+                                                placeholder="Teléfono" data-parsley-required="true" data-parsley-type="number"
+                                                data-parsley-minlength="10" data-parsley-maxlength="10">
                                         </div>
                                         <input type="hidden" class="form-control" id="form-hero-phone" name="desarrollo"
                                             value="Oficinas - Torre Vetro">
+                                            <input type="hidden" name="utm_source" />
+                                            <input type="hidden" name="utm_medium" />
+                                            <input type="hidden" name="utm_content" />
+                                            <input type="hidden" name="utm_campaign" />
                                         <button type="submit" id="submit-form" class="btn btn-default  btn-rounded arrow">Enviar</button>
                                     </form>
                                 </div>
@@ -524,37 +534,17 @@
         <!--end page-wrapper-->
 
 
-        <!--end outer-wrapper-->
-        <script type="text/javascript" src="assets/js/jquery-2.2.1.min.js"></script>
-        <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
-        <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-        <script type="text/javascript" src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script type="text/javascript" src="assets/js/scrollReveal.min.js"></script>
-        <script type="text/javascript" src="assets/js/readmore.min.js"></script>
-        <script type="text/javascript" src="assets/js/pace.min.js"></script>
+                <!--end outer-wrapper-->
+                <!-- <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script> -->
+                <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script> -->
+                <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+                <!-- <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script> -->
+                <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+                <!-- <script type="text/javascript" src="assets/js/jquery.magnific-popup.min.js"></script> -->
+                <script type="text/javascript" src="assets/js/scrollReveal.min.js"></script>
+                <!-- <script type="text/javascript" src="assets/js/readmore.min.js"></script> -->
+                <!-- <script type="text/javascript" src="assets/js/pace.min.js"></script> -->
 
-        <script type="text/javascript" src="assets/js/custom.js"></script>
-
-        <script>
-            var $form = $('form#form-wel'),
-                url = 'https://script.google.com/macros/s/AKfycbyT0kmfLxUTVhu7Oaupdt9BOYeypKpS9hoIQ1UKW2MN-gPPEG2l/exec'
-
-            $('#submit-form').on('click', function (e) {
-                e.preventDefault();
-                var jqxhr = $.ajax({
-                    url: url,
-                    method: "GET",
-                    dataType: "json",
-                    data: $form.serialize()
-                }).success(
-                    setTimeout(function () {
-                        window.location.href = "gracias.html"
-                    }, 500)
-                );
-            })
-        </script>
+                <script type="text/javascript" src="assets/js/custom.js"></script>
 
 </body>
